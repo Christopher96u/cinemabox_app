@@ -96,18 +96,23 @@ class Http {
         'statusCode': statusCode,
         'responseBody': responseBody,
       };
-      if (statusCode >= 200 && statusCode <= 299) {
+      if (statusCode >= 200 && statusCode < 300) {
         return Either.right(
-          onSuccess(responseBody),
+          onSuccess(
+            responseBody,
+          ),
         );
       }
       return Either.left(
-        HttpFailure(statusCode: statusCode),
+        HttpFailure(
+          statusCode: statusCode,
+          data: responseBody,
+        ),
       );
     } catch (e, stackTrace) {
       logs = {
         ...logs,
-        'exception': e.runtimeType,
+        'exception': e.runtimeType.toString(),
         'stackTrace': stackTrace.toString(),
       };
       if (e is SocketException || e is ClientException) {

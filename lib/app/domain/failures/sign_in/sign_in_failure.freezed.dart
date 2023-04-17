@@ -19,6 +19,7 @@ mixin _$SignInFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() notFound,
+    required TResult Function() notVerified,
     required TResult Function() network,
     required TResult Function() unauthorized,
     required TResult Function() unkown,
@@ -27,6 +28,7 @@ mixin _$SignInFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? notFound,
+    TResult? Function()? notVerified,
     TResult? Function()? network,
     TResult? Function()? unauthorized,
     TResult? Function()? unkown,
@@ -35,6 +37,7 @@ mixin _$SignInFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? notFound,
+    TResult Function()? notVerified,
     TResult Function()? network,
     TResult Function()? unauthorized,
     TResult Function()? unkown,
@@ -44,6 +47,7 @@ mixin _$SignInFailure {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_NotFound value) notFound,
+    required TResult Function(_NotVerified value) notVerified,
     required TResult Function(_Network value) network,
     required TResult Function(_Unauthorized value) unauthorized,
     required TResult Function(_Unkown value) unkown,
@@ -52,6 +56,7 @@ mixin _$SignInFailure {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_NotFound value)? notFound,
+    TResult? Function(_NotVerified value)? notVerified,
     TResult? Function(_Network value)? network,
     TResult? Function(_Unauthorized value)? unauthorized,
     TResult? Function(_Unkown value)? unkown,
@@ -60,6 +65,7 @@ mixin _$SignInFailure {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_NotFound value)? notFound,
+    TResult Function(_NotVerified value)? notVerified,
     TResult Function(_Network value)? network,
     TResult Function(_Unauthorized value)? unauthorized,
     TResult Function(_Unkown value)? unkown,
@@ -125,6 +131,7 @@ class _$_NotFound implements _NotFound {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() notFound,
+    required TResult Function() notVerified,
     required TResult Function() network,
     required TResult Function() unauthorized,
     required TResult Function() unkown,
@@ -136,6 +143,7 @@ class _$_NotFound implements _NotFound {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? notFound,
+    TResult? Function()? notVerified,
     TResult? Function()? network,
     TResult? Function()? unauthorized,
     TResult? Function()? unkown,
@@ -147,6 +155,7 @@ class _$_NotFound implements _NotFound {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? notFound,
+    TResult Function()? notVerified,
     TResult Function()? network,
     TResult Function()? unauthorized,
     TResult Function()? unkown,
@@ -162,6 +171,7 @@ class _$_NotFound implements _NotFound {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_NotFound value) notFound,
+    required TResult Function(_NotVerified value) notVerified,
     required TResult Function(_Network value) network,
     required TResult Function(_Unauthorized value) unauthorized,
     required TResult Function(_Unkown value) unkown,
@@ -173,6 +183,7 @@ class _$_NotFound implements _NotFound {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_NotFound value)? notFound,
+    TResult? Function(_NotVerified value)? notVerified,
     TResult? Function(_Network value)? network,
     TResult? Function(_Unauthorized value)? unauthorized,
     TResult? Function(_Unkown value)? unkown,
@@ -184,6 +195,7 @@ class _$_NotFound implements _NotFound {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_NotFound value)? notFound,
+    TResult Function(_NotVerified value)? notVerified,
     TResult Function(_Network value)? network,
     TResult Function(_Unauthorized value)? unauthorized,
     TResult Function(_Unkown value)? unkown,
@@ -198,6 +210,126 @@ class _$_NotFound implements _NotFound {
 
 abstract class _NotFound implements SignInFailure {
   factory _NotFound() = _$_NotFound;
+}
+
+/// @nodoc
+abstract class _$$_NotVerifiedCopyWith<$Res> {
+  factory _$$_NotVerifiedCopyWith(
+          _$_NotVerified value, $Res Function(_$_NotVerified) then) =
+      __$$_NotVerifiedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_NotVerifiedCopyWithImpl<$Res>
+    extends _$SignInFailureCopyWithImpl<$Res, _$_NotVerified>
+    implements _$$_NotVerifiedCopyWith<$Res> {
+  __$$_NotVerifiedCopyWithImpl(
+      _$_NotVerified _value, $Res Function(_$_NotVerified) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_NotVerified implements _NotVerified {
+  _$_NotVerified();
+
+  @override
+  String toString() {
+    return 'SignInFailure.notVerified()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_NotVerified);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() notFound,
+    required TResult Function() notVerified,
+    required TResult Function() network,
+    required TResult Function() unauthorized,
+    required TResult Function() unkown,
+  }) {
+    return notVerified();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? notFound,
+    TResult? Function()? notVerified,
+    TResult? Function()? network,
+    TResult? Function()? unauthorized,
+    TResult? Function()? unkown,
+  }) {
+    return notVerified?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? notFound,
+    TResult Function()? notVerified,
+    TResult Function()? network,
+    TResult Function()? unauthorized,
+    TResult Function()? unkown,
+    required TResult orElse(),
+  }) {
+    if (notVerified != null) {
+      return notVerified();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_NotFound value) notFound,
+    required TResult Function(_NotVerified value) notVerified,
+    required TResult Function(_Network value) network,
+    required TResult Function(_Unauthorized value) unauthorized,
+    required TResult Function(_Unkown value) unkown,
+  }) {
+    return notVerified(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_NotFound value)? notFound,
+    TResult? Function(_NotVerified value)? notVerified,
+    TResult? Function(_Network value)? network,
+    TResult? Function(_Unauthorized value)? unauthorized,
+    TResult? Function(_Unkown value)? unkown,
+  }) {
+    return notVerified?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_NotFound value)? notFound,
+    TResult Function(_NotVerified value)? notVerified,
+    TResult Function(_Network value)? network,
+    TResult Function(_Unauthorized value)? unauthorized,
+    TResult Function(_Unkown value)? unkown,
+    required TResult orElse(),
+  }) {
+    if (notVerified != null) {
+      return notVerified(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _NotVerified implements SignInFailure {
+  factory _NotVerified() = _$_NotVerified;
 }
 
 /// @nodoc
@@ -238,6 +370,7 @@ class _$_Network implements _Network {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() notFound,
+    required TResult Function() notVerified,
     required TResult Function() network,
     required TResult Function() unauthorized,
     required TResult Function() unkown,
@@ -249,6 +382,7 @@ class _$_Network implements _Network {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? notFound,
+    TResult? Function()? notVerified,
     TResult? Function()? network,
     TResult? Function()? unauthorized,
     TResult? Function()? unkown,
@@ -260,6 +394,7 @@ class _$_Network implements _Network {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? notFound,
+    TResult Function()? notVerified,
     TResult Function()? network,
     TResult Function()? unauthorized,
     TResult Function()? unkown,
@@ -275,6 +410,7 @@ class _$_Network implements _Network {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_NotFound value) notFound,
+    required TResult Function(_NotVerified value) notVerified,
     required TResult Function(_Network value) network,
     required TResult Function(_Unauthorized value) unauthorized,
     required TResult Function(_Unkown value) unkown,
@@ -286,6 +422,7 @@ class _$_Network implements _Network {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_NotFound value)? notFound,
+    TResult? Function(_NotVerified value)? notVerified,
     TResult? Function(_Network value)? network,
     TResult? Function(_Unauthorized value)? unauthorized,
     TResult? Function(_Unkown value)? unkown,
@@ -297,6 +434,7 @@ class _$_Network implements _Network {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_NotFound value)? notFound,
+    TResult Function(_NotVerified value)? notVerified,
     TResult Function(_Network value)? network,
     TResult Function(_Unauthorized value)? unauthorized,
     TResult Function(_Unkown value)? unkown,
@@ -352,6 +490,7 @@ class _$_Unauthorized implements _Unauthorized {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() notFound,
+    required TResult Function() notVerified,
     required TResult Function() network,
     required TResult Function() unauthorized,
     required TResult Function() unkown,
@@ -363,6 +502,7 @@ class _$_Unauthorized implements _Unauthorized {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? notFound,
+    TResult? Function()? notVerified,
     TResult? Function()? network,
     TResult? Function()? unauthorized,
     TResult? Function()? unkown,
@@ -374,6 +514,7 @@ class _$_Unauthorized implements _Unauthorized {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? notFound,
+    TResult Function()? notVerified,
     TResult Function()? network,
     TResult Function()? unauthorized,
     TResult Function()? unkown,
@@ -389,6 +530,7 @@ class _$_Unauthorized implements _Unauthorized {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_NotFound value) notFound,
+    required TResult Function(_NotVerified value) notVerified,
     required TResult Function(_Network value) network,
     required TResult Function(_Unauthorized value) unauthorized,
     required TResult Function(_Unkown value) unkown,
@@ -400,6 +542,7 @@ class _$_Unauthorized implements _Unauthorized {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_NotFound value)? notFound,
+    TResult? Function(_NotVerified value)? notVerified,
     TResult? Function(_Network value)? network,
     TResult? Function(_Unauthorized value)? unauthorized,
     TResult? Function(_Unkown value)? unkown,
@@ -411,6 +554,7 @@ class _$_Unauthorized implements _Unauthorized {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_NotFound value)? notFound,
+    TResult Function(_NotVerified value)? notVerified,
     TResult Function(_Network value)? network,
     TResult Function(_Unauthorized value)? unauthorized,
     TResult Function(_Unkown value)? unkown,
@@ -464,6 +608,7 @@ class _$_Unkown implements _Unkown {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() notFound,
+    required TResult Function() notVerified,
     required TResult Function() network,
     required TResult Function() unauthorized,
     required TResult Function() unkown,
@@ -475,6 +620,7 @@ class _$_Unkown implements _Unkown {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? notFound,
+    TResult? Function()? notVerified,
     TResult? Function()? network,
     TResult? Function()? unauthorized,
     TResult? Function()? unkown,
@@ -486,6 +632,7 @@ class _$_Unkown implements _Unkown {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? notFound,
+    TResult Function()? notVerified,
     TResult Function()? network,
     TResult Function()? unauthorized,
     TResult Function()? unkown,
@@ -501,6 +648,7 @@ class _$_Unkown implements _Unkown {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_NotFound value) notFound,
+    required TResult Function(_NotVerified value) notVerified,
     required TResult Function(_Network value) network,
     required TResult Function(_Unauthorized value) unauthorized,
     required TResult Function(_Unkown value) unkown,
@@ -512,6 +660,7 @@ class _$_Unkown implements _Unkown {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_NotFound value)? notFound,
+    TResult? Function(_NotVerified value)? notVerified,
     TResult? Function(_Network value)? network,
     TResult? Function(_Unauthorized value)? unauthorized,
     TResult? Function(_Unkown value)? unkown,
@@ -523,6 +672,7 @@ class _$_Unkown implements _Unkown {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_NotFound value)? notFound,
+    TResult Function(_NotVerified value)? notVerified,
     TResult Function(_Network value)? network,
     TResult Function(_Unauthorized value)? unauthorized,
     TResult Function(_Unkown value)? unkown,

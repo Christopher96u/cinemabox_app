@@ -44,4 +44,4 @@ app.*.map.json
 /android/app/release
 # Skip generated files
 *.g.dart
-*.frezeed.dart
+*.freezed.dart

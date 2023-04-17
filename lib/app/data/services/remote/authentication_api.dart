@@ -11,6 +11,11 @@ class AuthenticationAPI {
     if (failure.statusCode != null) {
       switch (failure.statusCode) {
         case 401:
+          if (failure.data is Map && (failure.data as Map)['statusCode'] == 32) {
+            return Either.left(
+              SignInFailure.notVerified(),
+            );
+          }
           return Either.left(
             SignInFailure.unauthorized(),
           );

@@ -45,6 +45,7 @@ class SubmitButton extends StatelessWidget {
       left: (failure) {
         final message = failure.when(
           notFound: () => 'Not found',
+          notVerified: () => 'Email not verified',
           network: () => 'Network error',
           unauthorized: () => 'Unauthorized',
           unkown: () => 'Unkown error',
