@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../global/controllers/session_controller.dart';
 import '../../../../routes/routes.dart';
 import '../../controller/sign_in_controller.dart';
 
@@ -23,7 +22,6 @@ class SubmitButton extends StatelessWidget {
               if (isValid) {
                 _submit(context);
               }
-              print('clicked');
             },
             color: Colors.blueAccent,
             elevation: 0,
@@ -54,11 +52,10 @@ class SubmitButton extends StatelessWidget {
           SnackBar(content: Text(message)),
         );
       },
-      right: (user) {
-        final SessionController sessionController = context.read();
-        sessionController.setuser(user);
-        Navigator.pushReplacementNamed(context, Routes.home);
-      },
+      right: (_) => Navigator.pushReplacementNamed(
+        context,
+        Routes.home,
+      ),
     );
   }
 }

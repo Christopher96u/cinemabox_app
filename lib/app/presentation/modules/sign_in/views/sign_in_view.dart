@@ -13,7 +13,9 @@ class SignInView extends StatelessWidget {
     return ChangeNotifierProvider<SignInController>(
       create: (_) => SignInController(
         const SignInState(),
+        sessionController: context.read(),
         authenticationRepository: context.read(),
+        favoritesController: context.read(),
       ),
       child: Scaffold(
         body: SafeArea(
@@ -35,9 +37,7 @@ class SignInView extends StatelessWidget {
                       TextFormField(
                         key: const Key('input-username'),
                         onChanged: (text) {
-                          print('Value username =============: $text');
                           controller.onUsernameChanged(text);
-                          print('Value username: $text');
                         },
                         validator: (text) {
                           text = text?.trim().toLowerCase() ?? '';

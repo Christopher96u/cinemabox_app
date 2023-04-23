@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import '../../../../domain/repositories/account_repository.dart';
 import '../../../../domain/repositories/authentication_repository.dart';
 import '../../../../domain/repositories/connectivity_repository.dart';
+import '../../../global/controllers/favorites/favorites_controller.dart';
 import '../../../global/controllers/session_controller.dart';
 import '../../../routes/routes.dart';
 
@@ -29,6 +30,7 @@ class _SplashViewState extends State<SplashView> {
       final AuthenticationRepository authenticationRepository = context.read();
       final AccountRepository accountRepository = context.read();
       final SessionController sessionController = context.read();
+      final FavoritesController favoritesController = context.read();
       final hasInternet = await connectivityRepository.hasInternet;
       if (!hasInternet) {
         return Routes.offline;
@@ -40,6 +42,7 @@ class _SplashViewState extends State<SplashView> {
       final user = await accountRepository.getUserData();
       if (user != null) {
         sessionController.setuser(user);
+        favoritesController.init();
         return Routes.home;
       }
       return Routes.signIn;
@@ -55,7 +58,6 @@ class _SplashViewState extends State<SplashView> {
 
   @override
   Widget build(BuildContext context) {
-    print('SplashView');
     return const Scaffold(
       body: Center(
         child: SizedBox(

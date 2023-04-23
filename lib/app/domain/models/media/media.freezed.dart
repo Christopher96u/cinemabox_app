@@ -29,7 +29,7 @@ mixin _$Media {
   @JsonKey(name: 'original_title', readValue: readOriginalTitleValue)
   String get originalTitle => throw _privateConstructorUsedError;
   @JsonKey(name: 'backdrop_path')
-  String get backdropPath => throw _privateConstructorUsedError;
+  String? get backdropPath => throw _privateConstructorUsedError;
   @JsonKey(name: 'vote_average')
   double get voteAverage => throw _privateConstructorUsedError;
   @JsonKey(name: 'media_type')
@@ -55,7 +55,7 @@ abstract class $MediaCopyWith<$Res> {
       @JsonKey(name: 'original_title', readValue: readOriginalTitleValue)
           String originalTitle,
       @JsonKey(name: 'backdrop_path')
-          String backdropPath,
+          String? backdropPath,
       @JsonKey(name: 'vote_average')
           double voteAverage,
       @JsonKey(name: 'media_type')
@@ -80,7 +80,7 @@ class _$MediaCopyWithImpl<$Res, $Val extends Media>
     Object? overview = null,
     Object? posterPath = null,
     Object? originalTitle = null,
-    Object? backdropPath = null,
+    Object? backdropPath = freezed,
     Object? voteAverage = null,
     Object? type = null,
   }) {
@@ -105,10 +105,10 @@ class _$MediaCopyWithImpl<$Res, $Val extends Media>
           ? _value.originalTitle
           : originalTitle // ignore: cast_nullable_to_non_nullable
               as String,
-      backdropPath: null == backdropPath
+      backdropPath: freezed == backdropPath
           ? _value.backdropPath
           : backdropPath // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       voteAverage: null == voteAverage
           ? _value.voteAverage
           : voteAverage // ignore: cast_nullable_to_non_nullable
@@ -137,7 +137,7 @@ abstract class _$$_MediaCopyWith<$Res> implements $MediaCopyWith<$Res> {
       @JsonKey(name: 'original_title', readValue: readOriginalTitleValue)
           String originalTitle,
       @JsonKey(name: 'backdrop_path')
-          String backdropPath,
+          String? backdropPath,
       @JsonKey(name: 'vote_average')
           double voteAverage,
       @JsonKey(name: 'media_type')
@@ -158,7 +158,7 @@ class __$$_MediaCopyWithImpl<$Res> extends _$MediaCopyWithImpl<$Res, _$_Media>
     Object? overview = null,
     Object? posterPath = null,
     Object? originalTitle = null,
-    Object? backdropPath = null,
+    Object? backdropPath = freezed,
     Object? voteAverage = null,
     Object? type = null,
   }) {
@@ -183,10 +183,10 @@ class __$$_MediaCopyWithImpl<$Res> extends _$MediaCopyWithImpl<$Res, _$_Media>
           ? _value.originalTitle
           : originalTitle // ignore: cast_nullable_to_non_nullable
               as String,
-      backdropPath: null == backdropPath
+      backdropPath: freezed == backdropPath
           ? _value.backdropPath
           : backdropPath // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       voteAverage: null == voteAverage
           ? _value.voteAverage
           : voteAverage // ignore: cast_nullable_to_non_nullable
@@ -236,7 +236,7 @@ class _$_Media implements _Media {
   final String originalTitle;
   @override
   @JsonKey(name: 'backdrop_path')
-  final String backdropPath;
+  final String? backdropPath;
   @override
   @JsonKey(name: 'vote_average')
   final double voteAverage;
@@ -299,7 +299,7 @@ abstract class _Media implements Media {
       @JsonKey(name: 'original_title', readValue: readOriginalTitleValue)
           required final String originalTitle,
       @JsonKey(name: 'backdrop_path')
-          required final String backdropPath,
+          required final String? backdropPath,
       @JsonKey(name: 'vote_average')
           required final double voteAverage,
       @JsonKey(name: 'media_type')
@@ -322,7 +322,7 @@ abstract class _Media implements Media {
   String get originalTitle;
   @override
   @JsonKey(name: 'backdrop_path')
-  String get backdropPath;
+  String? get backdropPath;
   @override
   @JsonKey(name: 'vote_average')
   double get voteAverage;

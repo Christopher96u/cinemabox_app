@@ -4,6 +4,8 @@ import 'package:provider/provider.dart';
 import '../../../global/widgets/request_failed.dart';
 import '../controller/movie_controller.dart';
 import '../controller/state/movie_state.dart';
+import 'widgets/movie_app_bar.dart';
+import 'widgets/movie_content.dart';
 
 class MovieView extends StatelessWidget {
   const MovieView({Key? key, required this.movieId}) : super(key: key);
@@ -20,16 +22,17 @@ class MovieView extends StatelessWidget {
       builder: (context, _) {
         final MovieController controller = context.watch();
         return Scaffold(
-          appBar: AppBar(),
-          body: controller.state.when(
-            loading: () => const Center(
+          appBar: const MovieAppBar(),
+          extendBodyBehindAppBar: true,
+          body: controller.state.map(
+            loading: (_) => const Center(
               child: CircularProgressIndicator(),
             ),
-            failed: () => RequestFailed(
+            failed: (_) => RequestFailed(
               onRetry: () => controller.init(),
             ),
-            loaded: (movie) => const Center(
-              child: Text('MOVIE'),
+            loaded: (state) => MovieContent(
+              state: state,
             ),
           ),
         );

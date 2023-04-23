@@ -20,7 +20,7 @@ class Media with _$Media {
     required String overview,
     @JsonKey(name: 'poster_path') required String posterPath,
     @JsonKey(name: 'original_title', readValue: readOriginalTitleValue) required String originalTitle,
-    @JsonKey(name: 'backdrop_path') required String backdropPath,
+    @JsonKey(name: 'backdrop_path') required String? backdropPath,
     @JsonKey(name: 'vote_average') required double voteAverage,
     @JsonKey(name: 'media_type') required MediaType type,
   }) = _Media;
